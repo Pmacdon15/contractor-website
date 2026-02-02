@@ -1,3 +1,4 @@
+import { HardHat } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -7,8 +8,9 @@ export function Navbar() {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link
           href="/"
-          className="font-bold text-2xl text-primary tracking-tight"
+          className="font-bold text-2xl text-primary tracking-tight flex gap-2"
         >
+          <HardHat size={30} />
           Contractor Chris
         </Link>
         <div className="hidden md:flex items-center gap-8">
