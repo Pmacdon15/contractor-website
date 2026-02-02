@@ -19,7 +19,7 @@ export function Footer() {
             <div className="space-y-2 opacity-90">
               <p>Phone: (555) 123-4567</p>
               <p>Email: chris@contractorchris.com</p>
-              <p>Service Area: Greater Metro Region</p>
+              <p>Service Area: Greater Calgary Region</p>
             </div>
           </div>
           <div>
