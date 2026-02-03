@@ -13,7 +13,8 @@ const services = [
     title: "Framing & Structural",
     description:
       "Expert framing services for new builds, basements, and renovations.",
-    image: "/basement1.jpeg",
+    image: "/before-framing.jpeg",
+    afterImage: "/after-framing.jpeg",
   },
   {
     title: "Drywall & Finishing",
@@ -72,32 +73,34 @@ export function Services() {
               className="group overflow-hidden border-none shadow-md hover:shadow-xl transition-all duration-300"
             >
               <div className="relative h-64 w-full overflow-hidden">
-                {/* AFTER image (only if exists), rendered first for layering */}
+                {/* AFTER image (default view if it exists) */}
                 {service.afterImage && (
                   <Image
                     src={service.afterImage}
                     alt={`${service.title} after`}
                     fill
-                    className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    className="object-cover transition-opacity duration-500 group-hover:opacity-0"
                   />
                 )}
 
-                {/* BEFORE image */}
+                {/* BEFORE image (hover view or default if no afterImage) */}
                 <Image
                   src={service.image}
                   alt={`${service.title} before`}
                   fill
                   className={`object-cover transition-opacity duration-500 ${
-                    service.afterImage ? "group-hover:opacity-0" : ""
+                    service.afterImage
+                      ? "opacity-0 group-hover:opacity-100"
+                      : "opacity-100"
                   }`}
                 />
 
                 {service.afterImage && (
                   <>
-                    <div className="absolute top-2 right-2 bg-background/80 text-foreground px-3 py-1 rounded-full text-xs font-semibold shadow-md transition-opacity duration-500 group-hover:opacity-0">
+                    <div className="absolute top-2 right-2 bg-background/80 text-foreground px-3 py-1 rounded-full text-xs font-semibold shadow-md opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                       Before
                     </div>
-                    <div className="absolute top-2 right-2 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold shadow-md opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    <div className="absolute top-2 right-2 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold shadow-md transition-opacity duration-500 group-hover:opacity-0">
                       After
                     </div>
                   </>
