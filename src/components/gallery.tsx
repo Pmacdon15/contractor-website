@@ -7,7 +7,12 @@ const images = [
   "/deck.jpeg",
   "/basement2.jpeg",
   "/railing.jpeg",
-  "/3235697741184465987.jpg.jpeg",
+  "/3235697741184465987.jpeg",
+  "/after-painting.jpeg",
+  '/before-painting.jpeg',
+  "/after-framing.jpeg",
+  '/before-framing.jpeg'
+
 ];
 
 export function Gallery() {

@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+
 const services = [
   {
     title: "Framing & Structural",
@@ -24,13 +25,15 @@ const services = [
     title: "Painting",
     description:
       "High-quality interior and exterior painting to transform your space.",
-    image: "/hero.png",
+    image: "/before-painting.jpeg",
+    afterImage: "/after-painting.jpeg",
   },
   {
     title: "Remodeling & Renovations",
     description:
       "Full-service remodeling for kitchens, basements, and living spaces.",
-    image: "/3235697741184465987.jpg.jpeg",
+    image: "/before-trim.jpeg",
+    afterImage:'/after-trim.jpeg'
   },
   {
     title: "Decks & Railings",
@@ -69,14 +72,40 @@ export function Services() {
               className="group overflow-hidden border-none shadow-md hover:shadow-xl transition-all duration-300"
             >
               <div className="relative h-64 w-full overflow-hidden">
+                {/* AFTER image (only if exists), rendered first for layering */}
+                {service.afterImage && (
+                  <Image
+                    src={service.afterImage}
+                    alt={`${service.title} after`}
+                    fill
+                    className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  />
+                )}
+
+                {/* BEFORE image */}
                 <Image
                   src={service.image}
-                  alt={service.title}
+                  alt={`${service.title} before`}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  className={`object-cover transition-opacity duration-500 ${
+                    service.afterImage ? "group-hover:opacity-0" : ""
+                  }`}
                 />
+
+                {service.afterImage && (
+                  <>
+                    <div className="absolute top-2 right-2 bg-background/80 text-foreground px-3 py-1 rounded-full text-xs font-semibold shadow-md transition-opacity duration-500 group-hover:opacity-0">
+                      Before
+                    </div>
+                    <div className="absolute top-2 right-2 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold shadow-md opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                      After
+                    </div>
+                  </>
+                )}
+
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
               </div>
+
               <CardHeader className="pb-2">
                 <CardTitle className="text-xl font-bold">
                   {service.title}
