@@ -1,15 +1,5 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import { GetAQuoteForm } from "./forms/get-a-quote-form";
 
 export function ContactForm() {
   return (
@@ -47,8 +37,8 @@ export function ContactForm() {
               </div>
             </div>
           </div>
-
-          <Card className="shadow-2xl border-none p-2">
+          <GetAQuoteForm />
+          {/* <Card className="shadow-2xl border-none p-2">
             <CardHeader className="bg-primary text-primary-foreground p-8 rounded-lg shadow-sm">
               <CardTitle className="text-2xl font-bold">Get a Quote</CardTitle>
               <CardDescription className="text-primary-foreground/80 text-base">
@@ -89,7 +79,7 @@ export function ContactForm() {
                 Send Request
               </Button>
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
       </div>
     </section>
