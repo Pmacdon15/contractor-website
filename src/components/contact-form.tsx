@@ -1,44 +1,47 @@
-"use client";
-import { GetAQuoteForm } from "./forms/get-a-quote-form";
+'use client'
+import { GetAQuoteForm } from './forms/get-a-quote-form'
 
 export function ContactForm() {
-  return (
-    <section id="contact" className="py-24 bg-secondary/50">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Let's Build Something Great
-            </h2>
-            <p className="text-muted-foreground text-lg mb-8">
-              Ready to start your project? Fill out the form and we'll get back
-              to you with a free consultation and estimate.
-            </p>
-            <div className="space-y-6 text-lg">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold">
-                  P
-                </div>
-                <div>
-                  <p className="font-bold">Phone</p>
-                  <p className="text-muted-foreground">(555) 123-4567</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold">
-                  E
-                </div>
-                <div>
-                  <p className="font-bold">Email</p>
-                  <p className="text-muted-foreground">
-                    chris@contractorchris.com
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <GetAQuoteForm />
-          {/* <Card className="shadow-2xl border-none p-2">
+	return (
+		<section className="bg-secondary/50 py-24" id="contact">
+			<div className="container mx-auto max-w-6xl px-4">
+				<div className="grid items-center gap-12 lg:grid-cols-2">
+					<div>
+						<h2 className="mb-6 font-bold text-3xl md:text-5xl">
+							Let's Build Something Great
+						</h2>
+						<p className="mb-8 text-lg text-muted-foreground">
+							Ready to start your project? Fill out the form and
+							we'll get back to you with a free consultation and
+							estimate.
+						</p>
+						<div className="space-y-6 text-lg">
+							<div className="flex items-center gap-4">
+								<div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20 font-bold text-primary">
+									P
+								</div>
+								<div>
+									<p className="font-bold">Phone</p>
+									<p className="text-muted-foreground">
+										(555) 123-4567
+									</p>
+								</div>
+							</div>
+							<div className="flex items-center gap-4">
+								<div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20 font-bold text-primary">
+									E
+								</div>
+								<div>
+									<p className="font-bold">Email</p>
+									<p className="text-muted-foreground">
+										chris@contractorchris.com
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<GetAQuoteForm />
+					{/* <Card className="shadow-2xl border-none p-2">
             <CardHeader className="bg-primary text-primary-foreground p-8 rounded-lg shadow-sm">
               <CardTitle className="text-2xl font-bold">Get a Quote</CardTitle>
               <CardDescription className="text-primary-foreground/80 text-base">
@@ -80,8 +83,8 @@ export function ContactForm() {
               </Button>
             </CardContent>
           </Card> */}
-        </div>
-      </div>
-    </section>
-  );
+				</div>
+			</div>
+		</section>
+	)
 }

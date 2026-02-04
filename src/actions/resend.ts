@@ -25,10 +25,10 @@ export async function sendEmail(values: z.infer<typeof formSchema>) {
 		react: EmailTemplate({
 			name: validatedFields.data.full_name,
 			email: validatedFields.data.email,
-			subject:validatedFields.data.subject,
+			subject: validatedFields.data.subject,
 			message: validatedFields.data.message,
 		}),
-		replyTo:validatedFields.data.email
+		replyTo: validatedFields.data.email,
 	})
 
 	console.log('Result: ', data)
